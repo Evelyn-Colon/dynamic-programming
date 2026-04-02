@@ -18,6 +18,8 @@ The graphs are below:
 ![Runtime vs. Length of A + Length of B](plots/3.png)
 ![Runtime vs. Length of A * Length of B](plots/4.png)
 
+There appears to be no clear relationship between the length of `A` and the runtime or the length of `B` and the runtime. There appears to be a slightly stronger relationship between the length of `A` + the length of `B` and the runtime, indicating that the runtime is dependent on the size of both input strings. The relationship between the product of the lengths of `A` and `B` and the runtime seems to be a strong linear relationship, which seems to suggest the runtime is in `O(m * n)`, where `m` is the length of `A` and `n` is the length of `B`.
+
 I referred to the following resources to help me formulate test cases for the runtime analysis:
 - https://randomwordgenerator.com/ (generate random words for small/trivial cases)
 - https://word.tips/unscramble-word-finder/ (find anagrams for the second string in small/trivial cases)
