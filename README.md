@@ -3,17 +3,34 @@ Preconditions:
 - File is not empty
 - The alphabet cannot be the empty set, and strings a and b may not be empty. 
 
-# Sources for help generating random test cases
-https://randomwordgenerator.com/ (generate random words for small/trivial cases)
-https://word.tips/unscramble-word-finder/ (find anagrams for the second string in small/trivial cases)
-https://randomwordgenerator.com/sentence.php (random sentences for nontrivial cases)
-https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php (randomly assigned weights for alphabet characters)
+# Question 1: Empirical Comparison
+
+The input files used for analysis are located in the directory `tests/nontrivial`, and the corresponding outputs are located in `outputs/nontrivial`. I used a few different comparisons:
+- the relationship between the length of a and the runtime, 
+- the relationship between the length of b and the runtime, 
+- the relationship between the combined length of a and b and the runtime, and 
+- the relationship between the product of the lengths of a and b and the runtime.
+
+The graphs are below:
+
+![Runtime vs. Length of A](plots/1.png)
+![Runtime vs. Length of B](plots/2.png)
+![Runtime vs. Length of A + Length of B](plots/3.png)
+![Runtime vs. Length of A * Length of B](plots/4.png)
+
+I referred to the following resources to help me formulate test cases for the runtime analysis:
+- https://randomwordgenerator.com/ (generate random words for small/trivial cases)
+- https://word.tips/unscramble-word-finder/ (find anagrams for the second string in small/trivial cases)
+- https://randomwordgenerator.com/sentence.php (random sentences for nontrivial cases)
+- https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php (randomly assigned weights for alphabet characters)
 
 # Question 2: Recurrence Relation
 
 ![Recurrence Relation](recurrence_relation.png)
 
 Where $$OPT(i,j) = $$ the value of the common subsequence with maximum value when considering $$a_{1}...a{i}$$ and $$b_{1}...b{j}$$.
+
+I referred to this Reddit post for help formatting the recurrence relation correctly in LaTeX: https://www.reddit.com/r/LaTeX/comments/15wwidi/multiple_lines_in_curly_bracket_i_want_make_the/#:~:text=Comments%20Section,%5C%5D
 
 ## Explanation of the Recurrence Relation
 
