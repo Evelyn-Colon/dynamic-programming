@@ -20,7 +20,7 @@ def find_solution(v, a, b, i, j, M, curr=""):
         return curr + ""
     elif a[i - 1] == b[j - 1] and M[i][j] == M[i-1][j-1] + v[a[i-1]]:
         return curr + find_solution(v, a, b, i-1, j-1, M, curr) + a[i - 1]
-    elif a[i-1] == M[i-1][j]:
+    elif M[i][j] == M[i-1][j]:
         return curr + find_solution(v, a, b, i-1, j, M, curr)
     else:
         return curr + find_solution(v, a, b, i, j-1, M, curr)  
