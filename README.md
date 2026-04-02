@@ -7,7 +7,7 @@
 To run the algorithm on a chosen input file, use the following command structure from the project root:
 
 ```bash
-python3 src/main.py <input_filepath> <output_filepath>
+python3 src/main.py input_filepath output_filepath
 ```
 
 If all preconditions are met (see preconditions/assumptions), the HVLCS and its value will be written to the output filepath specified in the command.
