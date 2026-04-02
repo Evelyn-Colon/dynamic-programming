@@ -49,7 +49,7 @@ Additionally, there are two recursive cases in this recurrence relation:
         - $$OPT(i,j)$$ is the maximum value of a common subsequence obtained when considering the first `i` characters in `a` and the first `j-1` characters in `b` (treating $$b_{j}$$ as though it is not available for matching.) This gives us the third term in the `max` expression on the third line of the recurrence equation.
 - If $$a_{i}$$ and $$b_{j}$$ are **not** equal, the logic is similar, except now we cannot consider the first possibility described above because we cannot add a new value. The second and third cases remain the same, and those are now the only cases being considered because $$a_{i}$$ and $$b_{j}$$ cannot be matched.
 
-# Question 2: Big-Oh
+# Question 3: Big-Oh
 ## Pseudocode
 ```plaintext
 input: a, b, v (values corresponding to characters in alphabet)
