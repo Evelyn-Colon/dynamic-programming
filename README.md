@@ -11,7 +11,7 @@ https://www.calculatorsoup.com/calculators/statistics/random-number-generator.ph
 
 # Question 2: Recurrence Relation
 
-\[
+$$
     OPT(i, j) = \begin{cases}
     0 & \text{if } i = 0 \\
     0 & \text{if } j = 0 \\
@@ -19,4 +19,4 @@ https://www.calculatorsoup.com/calculators/statistics/random-number-generator.ph
     \max(OPT(i-1, j), OPT(i, j-1)) & \text{otherwise}
     \end{cases}
 
-\]
+$$
