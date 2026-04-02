@@ -5,14 +5,18 @@ def main():
     try:
         in_filepath = sys.argv[1]
         out_filepath = sys.argv[2]
-        v, a, b = parse_input(in_filepath)
-        print(v)
-        print(a)
-        print(b)
-        # max_v, lcs = lcs_dp(v, a, b)
-        # write_result(out_filepath, max_v, lcs)
     except IndexError:
         print("Usage: python3 src/main.py <input_filepath> <output_filepath>")   
+        return    
+    v, a, b = parse_input(in_filepath)
+    print(v)
+    print(a)
+    print(b)
+    max_v, lcs = lcs_dp(v, a, b)
+    print(max_v)
+    print(lcs)
+    # write_result(out_filepath, max_v, lcs)
+    
 
 if __name__ == "__main__":
     main()
