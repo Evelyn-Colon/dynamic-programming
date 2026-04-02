@@ -47,4 +47,40 @@ Additionally, there are two recursive cases in this recurrence relation:
     - If we choose not to add the shared character, then we have two possibilities which signify that $$OPT(i,j)$$ is basically the same as if we **could not** add the character; essentially, we treat either $$a_{i}$$ or $$b_{j}$$ as though it does not exist in the characters to be considered:
         - $$OPT(i,j)$$ is the maximum value of a common subsequence obtained when considering the first `i-1` characters in `a` and the first `j` characters in `b` (treating $$a_{i}$$ as though it is not available for matching). This gives us the second term in the `max` expression on the third line of the recurrence relation. 
         - $$OPT(i,j)$$ is the maximum value of a common subsequence obtained when considering the first `i` characters in `a` and the first `j-1` characters in `b` (treating $$b_{j}$$ as though it is not available for matching.) This gives us the third term in the `max` expression on the third line of the recurrence equation.
-- If $$a_{i}$$ and $$b_{j}$$ are **not** equal, the logic is similar, except now we cannot consider the first possibility described above because we cannot add a new value. The second and third cases remain the same, and those are now the only cases being considered because $$a_{i}$$ and $$b_{j}$$ cannot be matched.        
+- If $$a_{i}$$ and $$b_{j}$$ are **not** equal, the logic is similar, except now we cannot consider the first possibility described above because we cannot add a new value. The second and third cases remain the same, and those are now the only cases being considered because $$a_{i}$$ and $$b_{j}$$ cannot be matched.
+
+# Question 2: Big-Oh
+## Pseudocode
+```plaintext
+input: a, b, v (values corresponding to characters in alphabet)
+M: solution array
+for i in 0...m
+    M[i, 0] = 0
+for j in 0...n
+    M[0, j] = 0
+
+for i in 1...m
+    for j in 1...n
+        if a[i] = b[j]
+            M[i, j] = max(M[i - 1, j - 1] + v[a[i]], M[i - 1, j], M[i, j - 1])
+        else
+            M[i, j] = max(M[i - 1, j], M[i, j - 1])
+return M[m, n]
+```
+
+The above pseudocode retrieves the value of the HVLCS, but we need to use backtracking to retrieve the actual value of the HVLCS:
+
+```plaintext
+lcs = empty string we will use to build the solution
+Find-Solution(i, j)
+    if i = 0 or j = 0
+        return
+    if a[i] = b[i] and M[i, j] = M[i - 1, j - 1] + v[a[i]]
+        lcs += Find-Solution(i - 1, j - 1) + a[i]
+    else if M[i, j] = M[i - 1, j]
+        lcs += Find-Solution(i - 1, j)
+    else
+        lcs += Find-Solution(i, j - 1)
+```
+
+The above pseudocode constructs the HVLCS from the solution array `M`.
