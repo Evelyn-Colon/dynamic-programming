@@ -15,7 +15,7 @@ def main():
     max_v, lcs = lcs_dp(v, a, b)
     print(max_v)
     print(lcs)
-    # write_result(out_filepath, max_v, lcs)
+    write_result(out_filepath, max_v, lcs)
     
 
 if __name__ == "__main__":

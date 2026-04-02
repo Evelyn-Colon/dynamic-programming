@@ -38,5 +38,8 @@ def parse_input(filename):
         return {}, "", ""  
 
 def write_result(out_filepath, max_v, lcs):
-    pass
+    """This function takes in an output filepath, the maximum value, and the least common subsequence itself
+    and writes the data to the file"""
+    with open(out_filepath, "w") as file:
+        file.write(f"{max_v}\n{lcs}")
 
