@@ -129,19 +129,19 @@ return M[m, n]
 The above pseudocode retrieves the value of the HVLCS, but we need to use backtracking to retrieve the actual value of the HVLCS:
 
 ```plaintext
-lcs = empty string we will use to build the solution
+len_lcs = 0
 Find-Solution(i, j)
     if i = 0 or j = 0
         return
     if a[i] = b[i] and M[i, j] = M[i - 1, j - 1] + v[a[i]]
-        lcs += Find-Solution(i - 1, j - 1) + a[i]
+        lcs += Find-Solution(i - 1, j - 1) + 1
     else if M[i, j] = M[i - 1, j]
         lcs += Find-Solution(i - 1, j)
     else
         lcs += Find-Solution(i, j - 1)
 ```
 
-The above pseudocode constructs the HVLCS from the solution array `M`.
+The above pseudocode constructs the length of HVLCS from the solution array `M`. It's very similar to the backtracking algorithm in which we construct the actual LCS, but we instead add 1 to an integer value each time we have a match rather than adding a character to a string. Otherwise, it is basically the same algorithm.
 
 ### Runtime Analysis
 The main algorithm (not including backtracking) has two for loops (nested). The outer for loop runs `m` times, and the inner for loop runs `n` times, where `m` is the length of string `a` and `n` is the length of string `b`. Within the inner for loop, subproblem access operations run in `O(1)` because we are simply accessing the solution array `M` for the solutions to previous subproblems. Additionally, computing the maximum of a constant number of subproblems is an `O(1)` operation. Therefore, each iteration of the inner for loop runs in `O(1)`. Therefore, the total runtime for the main algorithm is `O(n*m)`. The backtracking algorithm also accesses each element of the solution array at most once, so it runs in `O(n*m)`. Therefore, the overall algorithm runs in `O(n*m)`.
