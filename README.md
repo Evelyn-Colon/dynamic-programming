@@ -2,6 +2,18 @@
 **Name:** Evelyn Colon
 **UFID:** 46048391
 
+## Project Structure
+- `src`: source code for I/O, the DP algorithm, and runtime analysis
+- `tests`: input files
+    - `nontrivial`: 10 nontrivial example files (lengths of a, b >= 25) gained from running `analysis.py`
+    - `small`: 5 small test case files used for my own testing of `main.py`
+- `outputs`: output files
+    - `nontrivial`: outputs produced from `tests/nontrivial`
+    - `small`: outputs produced from `tests/small`
+- `plots`: where the plots for my different experiments in written question 1 are located.
+- `recurrence_relation.png`: the LaTeX of the recurrence relation I developed for question 2, downloaded as an image to embed in the README. 
+
+
 ## Build/Run Instructions
 
 To run the algorithm on a chosen input file, use the following command structure from the project root:
@@ -31,6 +43,8 @@ python3 src/main.py tests/small/example1.in outputs/small/example1.out
 - No assumptions are made about the lengths of A and B.
 - Both an input filepath (relative to the project root) and an output filepath (relative to the project root) must be provided in the order specified in the example commands (see build/run instructions).
 - The input file must exist in the filetree at the location specified by the filepath.
+- Strings may contain nonalphanumeric characters and whitespace, but all nonalphanumeric characters will be stripped.
+- Input/alphabet is treated as case-insensitive. 
 
 ## Postconditions:
 - The value of the HVLCS and the HVLCS itself are written to the file specified by the output filepath, with each result on a separate line.
