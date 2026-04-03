@@ -35,7 +35,7 @@ python3 src/main.py tests/small/example1.in outputs/small/example1.out
 - The first line (k) cannot be empty.
 - k > 0.
 - The number of lines of alphabet character/value pairs must be equal to k.
-- Each character value pair must contain an alphanumeric character followed by an integer, separated by spaces.
+- Each character-value pair must contain an alphanumeric character followed by an integer, separated by spaces.
 - The alphabet cannot be the empty set.
 - String A and String B must be nonempty and contain at least one alphanumeric character.
 - The alphabet must contain **at least** all of the characters that are contained within the union of A and B, but it may contain more characters.
