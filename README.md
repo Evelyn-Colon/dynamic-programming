@@ -74,7 +74,7 @@ There appears to be no clear relationship between the length of `A` and the runt
 
 ### References
 
-I referred to the following resources to help me formulate test cases for the runtime analysis:
+I referred to the following resources to help me formulate test cases for the runtime analysis, as well as for my own testing:
 - https://randomwordgenerator.com/ (generate random words for small/trivial cases)
 - https://word.tips/unscramble-word-finder/ (find anagrams for the second string in small/trivial cases)
 - https://randomwordgenerator.com/sentence.php (random sentences for nontrivial cases)
