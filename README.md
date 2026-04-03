@@ -1,6 +1,6 @@
 # dynamic-programming
-**Name:** Evelyn Colon
-**UFID:** 46048391
+- **Name:** Evelyn Colon
+- **UFID:** 46048391
 
 ## Project Structure
 - `src`: source code for I/O, the DP algorithm, and runtime analysis
