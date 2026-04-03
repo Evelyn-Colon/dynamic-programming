@@ -63,10 +63,10 @@ The input files used for analysis are located in the directory `tests/nontrivial
 
 The graphs are below:
 
-![Runtime vs. Length of A](plots/1.png)
-![Runtime vs. Length of B](plots/2.png)
-![Runtime vs. Length of A + Length of B](plots/3.png)
-![Runtime vs. Length of A * Length of B](plots/4.png)
+![Runtime vs. Length of A](plots/plot1.png)
+![Runtime vs. Length of B](plots/plot2.png)
+![Runtime vs. Length of A + Length of B](plots/plot3.png)
+![Runtime vs. Length of A * Length of B](plots/plot4.png)
 
 ### Analysis
 
