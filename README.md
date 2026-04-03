@@ -1,4 +1,7 @@
 # dynamic-programming
+**Name:** Evelyn Colon
+**UFID:** 46048391
+
 Preconditions:
 - File is not empty
 - The alphabet cannot be the empty set, and strings a and b may not be empty. 

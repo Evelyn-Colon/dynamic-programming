@@ -10,6 +10,8 @@ def parse_input(filename):
             if not line_1 or line_1.strip() == "":
                 raise ValueError("First line is empty!")
             k = int(line_1)
+            if k <= 0:
+                raise ValueError("k must be a positive integer!")
             v = {}
             for i in range(k):
                 line = file.readline()
@@ -17,6 +19,8 @@ def parse_input(filename):
                     raise ValueError("Missing alphabet letter")
                 letter_val = line.lower().split()
                 letter = letter_val[0]
+                if not letter.isalnum() or not letter.isalnum():
+                    raise TypeError("Character must be alphanumeric")
                 if (len(letter) != 1):
                     raise ValueError(f"Character should only have length 1: {letter}")
                 if letter in v:
@@ -24,15 +28,15 @@ def parse_input(filename):
                 val = int(letter_val[1])
                 v[letter] = val    
             a = file.readline().strip().lower()
-            if not a:
+            # Source for help removing extra nonalphanumeric characters from strings: https://www.geeksforgeeks.org/python/python-remove-all-characters-except-letters-and-numbers/
+            a_clean = re.sub(r'[^a-z0-9]', '', a)
+            if not a_clean:
                 raise ValueError("Missing or empty a!")
             b = file.readline().strip().lower()
-            a_clean = re.sub(r'[^a-z0-9]', '', a)
             b_clean = re.sub(r'[^a-z0-9]', '', b)
-            # Source for help removing extra nonalphanumeric characters from strings: https://www.geeksforgeeks.org/python/python-remove-all-characters-except-letters-and-numbers/
             if not b_clean:
                 raise ValueError("Missing or empty b")
-            # Source for help with subsets
+            # Source for help with subsets: https://www.w3schools.com/python/ref_set_issubset.asp
             if not set(b_clean).issubset(v.keys()) or not set(a_clean).issubset(v.keys()):
                 raise KeyError("alphabet does not contain all of the characters in a and b!")
             return v, a_clean, b_clean

@@ -60,7 +60,7 @@ def plot_runtimes(runtimes):
         plt.ylabel("Runtime (ms)")
         plt.title("Runtime of Weighted LCS Algorithm")
         # Source: https://stackoverflow.com/questions/23238041/move-and-resize-legends-box-in-matplotlib
-        plt.savefig(f"plots/{i}.png")
+        plt.savefig(f"plots/plot{i}.png")
         plt.show()
         i += 1
     
