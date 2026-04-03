@@ -86,7 +86,7 @@ I referred to the following resources to help me formulate test cases for the ru
 
 ![Recurrence Relation](recurrence_relation.png)
 
-Where $$OPT(i,j) = $$ the value of the common subsequence with maximum value when considering $$a_{1}...a{i}$$ and $$b_{1}...b{j}$$.
+Where $$OPT(i,j) = $$ the value of the common subsequence with maximum value when considering $$a_{1}...a_{i}$$ and $$b_{1}...b_{j}$$.
 
 I referred to this Reddit post for help formatting the recurrence relation correctly in LaTeX: https://www.reddit.com/r/LaTeX/comments/15wwidi/multiple_lines_in_curly_bracket_i_want_make_the/#:~:text=Comments%20Section,%5C%5D
 
